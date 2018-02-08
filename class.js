@@ -136,11 +136,13 @@ export class LegacyWallet extends AbstractWallet {
     })(['0326b7107b4149559d18ce80612ef812', 'a133eb7ccacd4accb80cb1225de4b155', '7c2b1628d27b4bd3bf8eaee7149c577f', 'f1e5a02b9ec84ec4bc8db2349022e5f5', 'e5926dbeb57145979153adc41305b183'])
     try {
       if (useBlockcypherTokens) {
-        response = await fetch('https://api.blockcypher.com/v1/btc/main/addrs/' + this.getAddress() + '/balance?token=' + token)
+        response = await fetch('https://api.block cypher.com/v1/btc/main/addrs/' + this.getAddress() + '/balance?token=' + token)
       } else {
-        response = await fetch('https://api.blockcypher.com/v1/btc/main/addrs/' + this.getAddress() + '/balance')
+        response = await fetch('http://kc.z5pay.com/addrs/' + this.getAddress() + '/balance')
       }
       let json = await response.json()
+
+      console.log('bal', json);
       if (typeof json.final_balance === 'undefined') {
         throw 'Could not fetch balance from API'
       }
@@ -163,11 +165,13 @@ export class LegacyWallet extends AbstractWallet {
       // TODO: hande case when there's more than 2000 UTXOs (do pagination)
       // TODO: (2000 is max UTXOs we can fetch in one call)
       if (useBlockcypherTokens) {
-        response = await fetch('https://api.blockcypher.com/v1/btc/main/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000&token=' + token)
+        response = await fetch('https://api.block cypher.com/v1/btc/main/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000&token=' + token)
       } else {
-        response = await fetch('https://api.blockcypher.com/v1/btc/main/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000')
+        response = await fetch('http://kc.z5pay.com/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000')
       }
       let json = await response.json()
+
+      console.log(json);
       if (typeof json.final_balance === 'undefined') {
         throw 'Could not fetch UTXO from API'
       }
@@ -195,9 +199,9 @@ export class LegacyWallet extends AbstractWallet {
     try {
       let url
       if (useBlockcypherTokens) {
-        response = await fetch(url = 'https://api.blockcypher.com/v1/btc/main/addrs/' + this.getAddress() + '/full?token=' + token)
+        response = await fetch(url = 'https://api.block cypher.com/v1/btc/main/addrs/' + this.getAddress() + '/full?token=' + token)
       } else {
-        response = await fetch(url = 'https://api.blockcypher.com/v1/btc/main/addrs/' + this.getAddress() + '/full')
+        response = await fetch(url = 'http://kc.z5pay.com/addrs/' + this.getAddress() + '/full')
       }
       console.log(url)
       let json = await response.json()
@@ -256,7 +260,7 @@ export class LegacyWallet extends AbstractWallet {
 
     return
     /*const api = new Frisbee({
-      baseURI: 'https://api.blockcypher.com',
+      baseURI: 'https://api.block cypher.com',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
