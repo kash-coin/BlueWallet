@@ -12,7 +12,7 @@ let isaac = require( 'isaac' );
 
 let assert = require('assert')
 
-let kcZ5PayURL = 'http://kc.z5pay.com/v1/ksc/main/';
+let kcZ5PayURL = 'http://kc.z5pay.com';
 
 class AbstractWallet {
   constructor () {
@@ -255,7 +255,7 @@ export class LegacyWallet extends AbstractWallet {
     })
 
     let res = await api.get('/v1/ksc/main/broadcast/' + txhex)
-    console.log('response', res.body)
+    console.log('response', res)
     return res.body
 
 
