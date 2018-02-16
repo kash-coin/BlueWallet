@@ -80,6 +80,7 @@ export default class WalletsList extends Component {
               maxHeight={290}
               dataSource={this.state.dataSource}
               renderRow={(rowData) => {
+
                   return (
                     <BlueListItem
                       onPress={() =>
@@ -88,7 +89,7 @@ export default class WalletsList extends Component {
                       }}
                       leftIcon={{name: 'bitcoin', type: 'font-awesome', color: '#fff'}}
 
-                      title={rowData.getLabel() + ' | ' + rowData.getBalance() + " BTC"  }
+                      title={rowData.getLabel() + ' | ' + rowData.getBalance() + " KSC"  }
                       subtitle={rowData.getShortAddress()}
                       hideChevron={false}
                     />

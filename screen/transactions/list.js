@@ -93,7 +93,7 @@ export default class  TransactionsList extends Component {
         <Header
           backgroundColor={BlueApp.settings.brandingColor}
           leftComponent={<Icon name='menu' color="#fff"           onPress={() => this.props.navigation.navigate('DrawerToggle') }/>}
-          centerComponent={{ text: this.state.final_balance + ' BTC', style: { color: '#fff', fontSize: 25 } }}
+          centerComponent={{ text: this.state.final_balance + ' KSC', style: { color: '#fff', fontSize: 25 } }}
           rightComponent={<Icon name='refresh' color="#fff"           onPress={() => this.refresh() }/>}
         />
         <BlueCard title='My Transactions' >
@@ -106,13 +106,14 @@ export default class  TransactionsList extends Component {
             enableEmptySections={true}
             dataSource={this.state.dataSource}
             renderRow={(rowData) => {
+
               return (
                 <BlueListItem
                   avatar={
                     <Icon color={(() => {return rowData.confirmations && (rowData.value < 0 && "#900" || "#080") || "#ebebeb"   })()}
                       name={(() => {return rowData.value < 0 && 'call-made' || 'call-received'})()} />
                   }
-                  title={rowData.value/100000000 + " BTC"}
+                  title={rowData.value/100000000 + " KSC"}
                   subtitle={rowData.received.replace(['T'], ' ').replace(['Z'], ' ').split('.')[0] + ' | conf: ' + rowData.confirmations}
 
                   onPress={() =>

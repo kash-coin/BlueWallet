@@ -163,7 +163,7 @@ export default class RBF extends Component {
           />
 
           <BlueFormInput onChangeText={(text) => this.setState({feeDelta: text})} keyboardType={"numeric"}
-                         placeholder={"fee to add (in BTC)"}
+                         placeholder={"fee to add (in KSC)"}
                          value={this.state.feeDelta + ''}
           />
 

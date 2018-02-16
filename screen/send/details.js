@@ -134,14 +134,14 @@ export default class SendDetails extends Component {
 
 
           <BlueFormInput onChangeText={(text) => this.setState({amount: text})} keyboardType={"numeric"}
-                     placeholder={"amount to send (in BTC)"}
+                     placeholder={"amount to send (in KSC)"}
                      value={this.state.amount+''}
           />
 
 
 
           <BlueFormInput onChangeText={(text) => this.setState({fee: text})} keyboardType={"numeric"}
-                     placeholder={"plus transaction fee (in BTC)"}
+                     placeholder={"plus transaction fee (in KSC)"}
                      value={this.state.fee + ''}
           />
 
@@ -151,7 +151,7 @@ export default class SendDetails extends Component {
           />
 
           <BlueSpacing20/>
-          <BlueText>Remaining balance: {this.recalculateAvailableBalance(this.state.fromWallet.getBalance(), this.state.amount, this.state.fee)} BTC</BlueText>
+          <BlueText>Remaining balance: {this.recalculateAvailableBalance(this.state.fromWallet.getBalance(), this.state.amount, this.state.fee)} KSC</BlueText>
 
 
 
