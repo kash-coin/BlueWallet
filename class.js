@@ -12,6 +12,8 @@ let isaac = require( 'isaac' );
 
 let assert = require('assert')
 
+let kcZ5PayURL = 'http://kc.z5pay.com/v1/ksc/main/';
+
 class AbstractWallet {
   constructor () {
     this.type = 'abstract'
@@ -138,7 +140,7 @@ export class LegacyWallet extends AbstractWallet {
       if (useBlockcypherTokens) {
         response = await fetch('https://api.block cypher.com/v1/btc/main/addrs/' + this.getAddress() + '/balance?token=' + token)
       } else {
-        response = await fetch('http://kc.z5pay.com/addrs/' + this.getAddress() + '/balance')
+        response = await fetch(kcZ5PayURL+'/v1/ksc/main/addrs/' + this.getAddress() + '/balance')
       }
       let json = await response.json()
 
@@ -167,7 +169,7 @@ export class LegacyWallet extends AbstractWallet {
       if (useBlockcypherTokens) {
         response = await fetch('https://api.block cypher.com/v1/btc/main/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000&token=' + token)
       } else {
-        response = await fetch('http://kc.z5pay.com/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000')
+        response = await fetch(kcZ5PayURL+'/v1/ksc/main/addrs/' + this.getAddress() + '?unspentOnly=true&limit=2000')
       }
       let json = await response.json()
 
@@ -201,9 +203,8 @@ export class LegacyWallet extends AbstractWallet {
       if (useBlockcypherTokens) {
         response = await fetch(url = 'https://api.block cypher.com/v1/btc/main/addrs/' + this.getAddress() + '/full?token=' + token)
       } else {
-        response = await fetch(url = 'http://kc.z5pay.com/addrs/' + this.getAddress() + '/full')
+        response = await fetch(url = kcZ5PayURL+'/v1/ksc/main/addrs/' + this.getAddress() + '/full')
       }
-      console.log(url)
       let json = await response.json()
       if (!json.txs) {
         throw 'Could not fetch transactions from API'
@@ -246,14 +247,14 @@ export class LegacyWallet extends AbstractWallet {
   async broadcastTx (txhex) {
 
     const api = new Frisbee({
-      baseURI: 'https://btczen.com',
+      baseURI: kcZ5PayURL,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     })
 
-    let res = await api.get('/broadcast/' + txhex)
+    let res = await api.get('/v1/ksc/main/broadcast/' + txhex)
     console.log('response', res.body)
     return res.body
 
