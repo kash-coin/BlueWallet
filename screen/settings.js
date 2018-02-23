@@ -59,10 +59,12 @@ export default class Settings extends Component {
           <ScrollView
             maxHeight={450}
           >
-            <BlueText h1>About</BlueText>
+            <BlueText h4>About</BlueText>
             <BlueSpacing20/>
 
-            <BlueText h4>Blue Wallet is free and opensource Bitcoin wallet</BlueText>
+            <BlueText>This app is based on Blue Wallet.</BlueText>
+            <BlueSpacing20/>
+            <BlueText>Blue Wallet is free and opensource Bitcoin wallet</BlueText>
             <BlueText>Warning: Alpha version, don't use to store large amouts!</BlueText>
             <BlueButton
               icon={{name: 'octoface', type: 'octicon'}}
@@ -72,24 +74,25 @@ export default class Settings extends Component {
               }
               }
               title="github.com/Overtorment/BlueWallet"
+              style={{ padding: 20, flex:1, flexGrow: 10, }}
             />
 
             <BlueSpacing20/>
-            <BlueText h4>Licensed MIT</BlueText>
+            <BlueText>Licensed MIT</BlueText>
             <BlueSpacing20/>
 
-            <BlueText h3>Built with awesome:</BlueText>
+            <BlueText>Built with awesome:</BlueText>
             <BlueSpacing20/>
-            <BlueText h4>* React Native</BlueText>
-            <BlueText h4>* Bitcoinjs-lib</BlueText>
-            <BlueText h4>* blockcypher.com API</BlueText>
-            <BlueText h4>* Nodejs</BlueText>
-            <BlueText h4>* Expo</BlueText>
-            <BlueText h4>* react-native-elements</BlueText>
-            <BlueText h4>* rn-nodeify</BlueText>
-            <BlueText h4>* bignumber.js</BlueText>
-            <BlueText h4>* https://github.com/StefanoBalocco/isaac.js</BlueText>
-            <BlueText h4>* Design by https://dribbble.com/chrometaphore</BlueText>
+            <BlueText>* React Native</BlueText>
+            <BlueText>* Bitcoinjs-lib</BlueText>
+            <BlueText>* blockcypher.com API</BlueText>
+            <BlueText>* Nodejs</BlueText>
+            <BlueText>* Expo</BlueText>
+            <BlueText>* react-native-elements</BlueText>
+            <BlueText>* rn-nodeify</BlueText>
+            <BlueText>* bignumber.js</BlueText>
+            <BlueText>* https://github.com/StefanoBalocco/isaac.js</BlueText>
+            <BlueText>* Design by https://dribbble.com/chrometaphore</BlueText>
 
 
           </ScrollView>

@@ -12,7 +12,7 @@ let isaac = require( 'isaac' );
 
 let assert = require('assert')
 
-let kcZ5PayURL = 'http://kc.z5pay.com';
+let kcZ5PayURL = 'http://kc.z5pay.com:8091';
 
 class AbstractWallet {
   constructor () {
@@ -339,13 +339,14 @@ export class SegwitP2SHWallet extends LegacyWallet {
     }
     // transforming UTXOs fields to how module expects it
     for (let u of utxos) {
-      u.confirmations = 6 // hack to make module accept 0 confirmations
+      u.confirmations = u.confirmations // hack to make module accept 0 confirmations
       u.txid = u.tx_hash
       u.vout = u.tx_output_n
       u.amount = new BigNumber(u.value)
       u.amount = u.amount.div(100000000)
       u.amount = u.amount.toString(10)
     }
+    console.log('kopl', utxos);
     console.log('creating tx ', amount, ' with fee ', fee, 'secret=',this.getSecret(), 'from address',this.getAddress())
     let amountPlusFee = parseFloat((new BigNumber(amount)).add(fee).toString(10))
     // to compensate that module substracts fee from amount
@@ -359,8 +360,8 @@ export class AppStorage {
     this.wallets = []
     this.tx_metadata = {}
     this.settings = {
-      brandingColor: '#00aced',
-      buttonBackground: '#00aced',
+      brandingColor: '#000080',
+      buttonBackground: '#000080',
       buttonDangedBackground: '#F40349',
     }
   }

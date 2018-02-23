@@ -67,7 +67,7 @@ export default class WalletsList extends Component {
       <SafeBlueArea>
         <BlueHeader
           leftComponent={<Icon name='menu' color="#fff"           onPress={() => this.props.navigation.navigate('DrawerToggle') }/>}
-          centerComponent={{ text: 'Blue Wallet alpha', style: { color: '#fff', fontSize: 25 }}}
+          centerComponent={{ text: 'XXXCoin', style: { color: '#fff', fontSize: 25 }}}
         />
         <BlueCard title='My Wallets' >
           <BlueText style={{marginBottom: 10}}>
@@ -87,7 +87,7 @@ export default class WalletsList extends Component {
                       {
                         navigate('WalletDetails',  {address : rowData.getAddress()})
                       }}
-                      leftIcon={{name: 'bitcoin', type: 'font-awesome', color: '#fff'}}
+                      leftIcon={{name: 'check', type: 'font-awesome', color: BlueApp.settings.brandingColor}}
 
                       title={rowData.getLabel() + ' | ' + rowData.getBalance() + " KSC"  }
                       subtitle={rowData.getShortAddress()}

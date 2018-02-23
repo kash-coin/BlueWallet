@@ -101,32 +101,32 @@ export default class  TransactionsList extends Component {
             A list of ingoing or outgoing transactions of your wallets
           </BlueText>
 
-        <BlueList>
-          <ListView style={{ height: 360 }}
-            enableEmptySections={true}
-            dataSource={this.state.dataSource}
-            renderRow={(rowData) => {
+          <BlueList>
+            <ListView style={{ height: 360 }}
+              enableEmptySections={true}
+              dataSource={this.state.dataSource}
+              renderRow={(rowData) => {
 
-              return (
-                <BlueListItem
-                  avatar={
-                    <Icon color={(() => {return rowData.confirmations && (rowData.value < 0 && "#900" || "#080") || "#ebebeb"   })()}
-                      name={(() => {return rowData.value < 0 && 'call-made' || 'call-received'})()} />
-                  }
-                  title={rowData.value/100000000 + " KSC"}
-                  subtitle={rowData.received.replace(['T'], ' ').replace(['Z'], ' ').split('.')[0] + ' | conf: ' + rowData.confirmations}
+                return (
+                  <BlueListItem
+                    avatar={
+                      <Icon color={(() => {return rowData.confirmations && (rowData.value < 0 && "#900" || "#080") || "#ebebeb"   })()}
+                        name={(() => {return rowData.value < 0 && 'call-made' || 'call-received'})()} />
+                    }
+                    title={rowData.value/100000000 + " KSC"}
+                    subtitle={rowData.received.replace(['T'], ' ').replace(['Z'], ' ').split('.')[0] + ' | conf: ' + rowData.confirmations}
 
-                  onPress={() =>
-                  {
-                    navigate('TransactionDetails',  {hash: rowData.hash})
-                  }
-                  }
+                    onPress={() =>
+                    {
+                      navigate('TransactionDetails',  {hash: rowData.hash})
+                    }
+                    }
 
-                />
-              )
-            }}
-          />
-        </BlueList>
+                  />
+                )
+              }}
+            />
+          </BlueList>
         </BlueCard>
 
       </SafeBlueArea>

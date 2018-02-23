@@ -41,10 +41,7 @@ const Tabs = TabNavigator(
     tabBarPosition: 'bottom',
     animationEnabled: true,
     tabBarOptions: {
-      activeTintColor: 'white',
-      activeBackgroundColor: '#33bdf1',
-      inactiveBackgroundColor: BlueApp.settings.brandingColor,
-      inactiveTintColor: "white",
+      activeTintColor: BlueApp.settings.brandingColor,
     }
   }
 )

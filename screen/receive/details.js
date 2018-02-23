@@ -1,6 +1,6 @@
 let BlueApp = require('../../BlueApp')
 import React, { Component } from 'react';
-import { ActivityIndicator,  View, TextInput } from 'react-native';
+import { ActivityIndicator,  View, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { SafeAreaView, } from 'react-navigation';
 import { Icon, Card, Header, } from 'react-native-elements'
@@ -55,13 +55,17 @@ export default class ReceiveDetails extends Component {
     return (
       <SafeBlueArea forceInset={{ horizontal: 'always' }}  style={{flex: 1, paddingTop: 20}}>
         <BlueSpacing/>
-        <BlueCard title={"Share this address with payer"} style={{alignItems: 'center', flex: 1}}>
-          <TextInput style={{marginBottom:20, color:'white'}} editable={true} value={this.state.address} />
-          <QRCode
-            value={this.state.address}
-            size={312}
-            bgColor='white'
-            fgColor={BlueApp.settings.brandingColor}/>
+        <BlueCard title={"Share this address with payer"} style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
+          <Text style={{marginBottom:20, textAlign:'center', color: BlueApp.settings.brandingColor}} editable={true}>{this.state.address}</Text>
+          <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <QRCode
+              value={this.state.address}
+              size={312}
+              bgColor='white'
+              fgColor={BlueApp.settings.brandingColor}
+              style={{alignSelf:'center'}}
+            />
+          </View>
 
         </BlueCard>
 
