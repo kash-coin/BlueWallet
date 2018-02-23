@@ -6,6 +6,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { SafeAreaView, TabNavigator } from 'react-navigation';
 import { Card, Header, Icon, List, ListItem } from 'react-native-elements'
 import { BlueLoading, BlueList, BlueListView, BlueSpacing, BlueButton, SafeBlueArea, BlueCard, BlueText, BlueListItem, BlueHeader } from '../../BlueComponents'
+
+import moment from 'moment';
+
 let EV = require('../../events')
 
 let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -114,7 +117,7 @@ export default class  TransactionsList extends Component {
                         name={(() => {return rowData.value < 0 && 'call-made' || 'call-received'})()} />
                     }
                     title={rowData.value/100000000 + " KSC"}
-                    subtitle={rowData.received.replace(['T'], ' ').replace(['Z'], ' ').split('.')[0] + ' | conf: ' + rowData.confirmations}
+                    subtitle={moment.utc(rowData.received).local().format('lll') + ' | conf: ' + rowData.confirmations}
 
                     onPress={() =>
                     {
