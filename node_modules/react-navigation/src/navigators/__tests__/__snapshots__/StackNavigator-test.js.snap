@@ -79,6 +79,7 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
       collapsable={undefined}
       getScreenDetails={[Function]}
       headerMode={undefined}
+      headerTransitionPreset={undefined}
       index={0}
       layout={
         Object {
@@ -89,19 +90,29 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
           "width": 0,
         }
       }
+      leftButtonInterpolator={[Function]}
       leftInterpolator={[Function]}
+      leftLabelInterpolator={[Function]}
       mode="float"
       navigation={
         Object {
+          "addListener": [Function],
           "dispatch": [Function],
+          "getParam": [Function],
           "goBack": [Function],
           "navigate": [Function],
+          "pop": [Function],
+          "popToTop": [Function],
+          "push": [Function],
+          "replace": [Function],
           "setParams": [Function],
           "state": Object {
             "index": 0,
+            "isTransitioning": false,
+            "key": "StackRouterRoot",
             "routes": Array [
               Object {
-                "key": "Init-id-0-1",
+                "key": "id-0-1",
                 "routeName": "Home",
               },
             ],
@@ -120,12 +131,15 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
           "getStateForAction": [Function],
         }
       }
+      titleFromLeftInterpolator={[Function]}
       titleInterpolator={[Function]}
       transitionConfig={undefined}
+      transitionPreset="fade-in-place"
     >
       <View
         collapsable={undefined}
         onLayout={[Function]}
+        pointerEvents="box-none"
         style={
           Object {
             "backgroundColor": "#F7F7F7",
@@ -176,11 +190,6 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
                   "position": "absolute",
                   "right": 70,
                   "top": 0,
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                  ],
                 }
               }
             >
@@ -196,7 +205,7 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
                   Object {
                     "color": "rgba(0, 0, 0, .9)",
                     "fontSize": 17,
-                    "fontWeight": "600",
+                    "fontWeight": "700",
                     "marginHorizontal": 16,
                     "textAlign": "center",
                   }
@@ -310,6 +319,7 @@ exports[`StackNavigator renders successfully 1`] = `
       collapsable={undefined}
       getScreenDetails={[Function]}
       headerMode={undefined}
+      headerTransitionPreset={undefined}
       index={0}
       layout={
         Object {
@@ -320,19 +330,29 @@ exports[`StackNavigator renders successfully 1`] = `
           "width": 0,
         }
       }
+      leftButtonInterpolator={[Function]}
       leftInterpolator={[Function]}
+      leftLabelInterpolator={[Function]}
       mode="float"
       navigation={
         Object {
+          "addListener": [Function],
           "dispatch": [Function],
+          "getParam": [Function],
           "goBack": [Function],
           "navigate": [Function],
+          "pop": [Function],
+          "popToTop": [Function],
+          "push": [Function],
+          "replace": [Function],
           "setParams": [Function],
           "state": Object {
             "index": 0,
+            "isTransitioning": false,
+            "key": "StackRouterRoot",
             "routes": Array [
               Object {
-                "key": "Init-id-0-0",
+                "key": "id-0-0",
                 "routeName": "Home",
               },
             ],
@@ -351,12 +371,15 @@ exports[`StackNavigator renders successfully 1`] = `
           "getStateForAction": [Function],
         }
       }
+      titleFromLeftInterpolator={[Function]}
       titleInterpolator={[Function]}
       transitionConfig={undefined}
+      transitionPreset="fade-in-place"
     >
       <View
         collapsable={undefined}
         onLayout={[Function]}
+        pointerEvents="box-none"
         style={
           Object {
             "backgroundColor": "#F7F7F7",
@@ -407,11 +430,6 @@ exports[`StackNavigator renders successfully 1`] = `
                   "position": "absolute",
                   "right": 0,
                   "top": 0,
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                  ],
                 }
               }
             >
@@ -427,7 +445,7 @@ exports[`StackNavigator renders successfully 1`] = `
                   Object {
                     "color": "rgba(0, 0, 0, .9)",
                     "fontSize": 17,
-                    "fontWeight": "600",
+                    "fontWeight": "700",
                     "marginHorizontal": 16,
                     "textAlign": "center",
                   }

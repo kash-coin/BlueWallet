@@ -39,7 +39,7 @@
     "react-native-elements": "^0.18.5",
     "react-native-level-fs": "^3.0.0",
     "react-native-qrcode": "^0.2.6",
-    "react-navigation": "^1.0.0-beta.23",
+    "react-navigation": "^1.1.2",
     "readable-stream": "^1.1.14",
     "request-promise-native": "^1.0.5",
     "secure-random": "^1.1.1",
