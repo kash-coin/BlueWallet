@@ -43,7 +43,7 @@ export default class SendList extends Component {
     for (let w of BlueApp.getWallets()) {
       list.push({
         title: w.getAddress(),
-        subtitle: w.getLabel(),
+        subtitle: w.getLabel() + ' | ' + w.getBalance() + " KSC",
       })
       this.walletsCount++;
     }
